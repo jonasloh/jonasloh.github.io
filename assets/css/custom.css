@@ -1,3 +1,53 @@
+body, p, li {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #e6e6e6;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+
+h1 {
+  font-size: 44px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
 button,
 .btn,
 .btn-primary,
@@ -166,11 +216,6 @@ a:active {
   padding: 12px;
 }
 
-.details-grid .detail-item {
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 14px 16px;
-  backgro
 
 #header.header {
   background: rgba(10,10,10,0.75);
@@ -376,4 +421,285 @@ ol.numbered-list ol li::before {
 .service-table tbody tr:hover {
   background-color: #fff8e1;
   transition: 0.3s;
+}
+
+/* ========================= */
+/*        ANIMACIJA #1       */
+/* Kortelių fade-in įėjimas  */
+/* ========================= */
+@keyframes fadeInCards {
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Pritaikymas visoms kortelėms */
+.profile-card,
+.exp-card,
+.portfolio-card,
+.service-item,
+.info-item,
+.details-grid .detail-item,
+.cta-box {
+  animation: fadeInCards 1s ease forwards;
+}
+
+
+
+/* ========================= */
+/*        ANIMACIJA #2       */
+/* Kortelių hover zoom + glow */
+/* ========================= */
+.profile-card:hover,
+.exp-card:hover,
+.portfolio-card:hover,
+.service-item:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+  box-shadow: 0 0 25px rgba(255, 255, 0, 0.3);
+}
+
+
+
+/* ========================= */
+/*        ANIMACIJA #3       */
+/* Social ikonų bounce efektas */
+/* ========================= */
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.social-links a i,
+.social-connect a i {
+  display: inline-block;
+  animation: iconBounce 1.5s infinite ease-in-out;
+}
+/* ===== Page Preloader (CSS only) ===== */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #0f0f10;          /* tamsus fonas, derinasi su tema */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;                /* virš viso turinio */
+}
+
+/* Besisukantis apskritimas viduje */
+#preloader::before {
+  content: "";
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffee00;    /* geltona – kaip tavo tema */
+  animation: preloaderSpin 1s linear infinite;
+}
+
+/* Sukimosi animacija */
+@keyframes preloaderSpin {
+  to {
+    transform: rotate(850deg);
+  }
+}
+
+/* === ANIMUOTAS GRADIENTAS SERVICES SEKCIJOJE === */
+
+.services {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  background: linear-gradient(120deg, #141414, #242424, #3a2b70, #ff4d4d);
+  background-size: 300% 300%;
+  animation: servicesGradientMove 12s ease-in-out infinite;
+}
+
+/* Kad kortelės būtų ant viršaus ir įskaitomos */
+.services .service-item,
+.services .cta-box {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(12, 12, 12, 0.9);
+  backdrop-filter: blur(6px);
+}
+
+/* Gradiento judėjimo animacija */
+@keyframes servicesGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* ========================================= */
+/*  Prefers-reduced-motion: animacijų mažinimas */
+/* ========================================= */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Išjungia VISAS animacijas ir perėjimus */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Išjungiam fade-in sekcijų animacijas */
+  section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Išjungiam kortelių animacijas */
+  .profile-card,
+  .exp-card,
+  .portfolio-card,
+  .service-item,
+  .info-item,
+  .details-grid .detail-item,
+  .cta-box {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Hover efektas VISIEMS elementams – be transform */
+  .profile-card:hover,
+  .exp-card:hover,
+  .portfolio-card:hover,
+  .service-item:hover,
+  a:hover,
+  button:hover,
+  .btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Progreso juosta be judesio */
+  .progress-bar {
+    background-position: 0 0 !important;
+  }
+
+  /* Preloader – be sukimųsi */
+  #preloader::before {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+/*
+
+/* ===== CSS FIGŪROS "ABOUT" SEKCIJOJE ===== */
+
+/* Konteineris figūroms */
+.about {
+  position: relative;
+}
+
+/* Pakeičiam foninį blur burbulą, kad būtų už visko */
+.about::before {
+  z-index: -1; /* kad gradientas būtų pačiame fone */
+}
+
+.about-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0; /* tarp fono ir turinio */
+}
+
+/* Bendras stilius visoms figūroms */
+.about-shapes .shape {
+  position: absolute;
+  opacity: 0.8;
+  filter: blur(0.3px);
+}
+
+/* Apskritimas – floating + šiek tiek scaling */
+.shape-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffee00 0%, #ff4d4d 70%);
+  top: 10%;
+  left: 5%;
+  animation:
+    floatShape 8s ease-in-out infinite,
+    slowScale 6s ease-in-out infinite;
+}
+
+/* Trikampis – rotating + floating */
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 120px solid #3a2b70;
+  top: 60%;
+  right: 8%;
+  animation:
+    rotateShape 12s linear infinite,
+    floatShape 9s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+/* Kvadratas – lėtas sukimosi + judėjimo efektas */
+.shape-square {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ff4d4d, #ffee00);
+  bottom: 5%;
+  left: 50%;
+  transform-origin: center;
+  animation:
+    rotateShape 16s linear infinite,
+    floatDiagonal 10s ease-in-out infinite;
+}
+
+/* ==== ANIMACIJOS ==== */
+
+/* Lėtas "plaukiojimas" aukštyn–žemyn */
+@keyframes floatShape {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+/* Plaukiojimas įstrižai */
+@keyframes floatDiagonal {
+  0%   { transform: translate(-20px, 0); }
+  50%  { transform: translate(10px, -20px); }
+  100% { transform: translate(-20px, 0); }
+}
+
+/* Sukimasis */
+@keyframes rotateShape {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Švelnus didėjimas / mažėjimas */
+@keyframes slowScale {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
 }
