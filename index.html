@@ -667,87 +667,139 @@
     </section><!-- /Portfolio Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+<!-- Contact Section -->
+<section id="contact" class="contact section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Contact</span>
-        <h2>Contact</h2>
-      </div><!-- End Section Title -->
-      <div class="container">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <span class="subtitle">Contact</span>
+    <h2>Contact</h2>
+  </div><!-- End Section Title -->
 
-        <div class="row gy-4">
+  <div class="container">
 
-          <div class="col-lg-4">
-            <div class="info-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-geo-alt"></i>
-              </div>
-              <div>
-                <h3>Address</h3>
-                <p>2847 Oak Street, San Francisco, CA 94102</p>
-              </div>
-            </div>
+    <div class="row gy-4">
 
-            <div class="info-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-telephone"></i>
-              </div>
-              <div>
-                <h3>Call Me</h3>
-                <p>+1 (555) 234-5678</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-envelope"></i>
-              </div>
-              <div>
-                <h3>Email Me</h3>
-                <p>alex@example.com</p>
-              </div>
-            </div>
-
+      <div class="col-lg-4">
+        <div class="info-item">
+          <div class="icon-wrapper">
+            <i class="bi bi-geo-alt"></i>
           </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
+          <div>
+            <h3>Address</h3>
+            <p>Vilnius, Lietuva</p>
           </div>
+        </div>
 
+        <div class="info-item">
+          <div class="icon-wrapper">
+            <i class="bi bi-telephone"></i>
+          </div>
+          <div>
+            <h3>Call Me</h3>
+            <p>+370 600 00000</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon-wrapper">
+            <i class="bi bi-envelope"></i>
+          </div>
+          <div>
+            <h3>Email Me</h3>
+            <p>ignasbackunas@gmail.com</p>
+          </div>
         </div>
 
       </div>
 
-    </section><!-- /Contact Section -->
+      <div class="col-lg-8">
+        <form id="contactForm" class="php-email-form" novalidate>
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <label for="vardas" class="form-label text-light">Vardas</label>
+              <input type="text" name="vardas" id="vardas" class="form-control" placeholder="Vardas" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="pavarde" class="form-label text-light">Pavardė</label>
+              <input type="text" name="pavarde" id="pavarde" class="form-control" placeholder="Pavardė" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="email" class="form-label text-light">El. paštas</label>
+              <input type="email" name="email" id="email" class="form-control" placeholder="El. paštas" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="telefonas" class="form-label text-light">Telefonas</label>
+              <input type="text" name="telefonas" id="telefonas" class="form-control" placeholder="+370 6xx xxxxx" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="col-md-12">
+              <label for="adresas" class="form-label text-light">Adresas</label>
+              <input type="text" name="adresas" id="adresas" class="form-control" placeholder="Adresas" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <!-- Papildomi klausimai 1–3 (1–10 balai) -->
+            <div class="col-md-4">
+              <label for="klausimas1" class="form-label text-light">Įvertinimas 1 (1–10)</label>
+              <input type="number" min="1" max="10" id="klausimas1" class="form-control" placeholder="1–10" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="klausimas2" class="form-label text-light">Įvertinimas 2 (1–10)</label>
+              <input type="number" min="1" max="10" id="klausimas2" class="form-control" placeholder="1–10" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="klausimas3" class="form-label text-light">Įvertinimas 3 (1–10)</label>
+              <input type="number" min="1" max="10" id="klausimas3" class="form-control" placeholder="1–10" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <button type="submit" id="submitBtn" disabled>Pateikti</button>
+            </div>
+
+          </div>
+        </form>
+
+        <!-- Rezultatų išvedimas -->
+        <div id="formResults" style="margin-top:20px; color:#fff;"></div>
+
+        <!-- Pop-up pranešimas -->
+        <div id="popupMessage" style="
+          display:none;
+          position:fixed;
+          bottom:20px;
+          right:20px;
+          background:#ffee00;
+          color:#000;
+          padding:15px 20px;
+          border-radius:12px;
+          box-shadow:0 0 12px rgba(255,255,0,0.5);
+          font-weight:700;
+          z-index:9999;
+        ">
+          Duomenys pateikti sėkmingai!
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- /Contact Section -->
+
 
   </main>
 
@@ -834,7 +886,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/custom.js"></script>
 </body>
 
 </html>
