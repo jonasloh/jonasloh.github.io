@@ -800,6 +800,89 @@
 
 </section><!-- /Contact Section -->
 
+       <!-- Game Section -->
+    <section id="game" class="section game-section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Mano žaidimas</span>
+        <h2>Atminties kortelių žaidimas</h2>
+        <p>Pasirink sunkumo lygį, paspausk „Start“ ir surask visas kortelių poras.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="game-wrapper">
+
+          <!-- Valdikliai + statistika -->
+          <div class="game-panel">
+            <!-- Sunkumo pasirinkimas -->
+  <div class="game-controls mb-3">
+    <label for="game-difficulty" class="form-label">Sunkumas</label>
+    <select id="game-difficulty" class="form-select">
+  <option value="easy">Lengvas (4×3)</option>
+  <option value="hard">Sunkus (6×4)</option>
+</select>
+
+  </div>
+
+  <!-- Mygtukai -->
+  <div class="game-buttons mb-3 d-flex gap-2">
+    <button id="game-start" type="button" class="btn btn-primary">Start</button>
+    <button id="game-reset" type="button" class="btn btn-secondary">Atnaujinti</button>
+  </div>
+
+  <!-- Statistika -->
+  <div class="game-stats">
+    <p>Ėjimai: <strong><span id="moves-count">0</span></strong></p>
+    <p>Sutapimai: <strong><span id="matches-count">0 / 0</span></strong></p>
+    <p>Laikas: <strong><span id="timer-display">00:00</span></strong></p>
+
+    <hr>
+
+    <p>Geriausias rezultatas (lengvas): 
+      <strong><span id="best-easy">-</span></strong> ėjimai
+    </p>
+    </p>
+    <p>Geriausias rezultatas (sunkus): 
+      <strong><span id="best-hard">-</span></strong> ėjimai
+    </p>
+  </div>
+
+  <!-- Pranešimai -->
+  <div id="game-message" class="game-message mt-3"></div>
+</div>
+          </div>
+
+          <!-- Žaidimo lenta (kortelės generuojamos tik JS) -->
+          <div class="game-board-wrapper">
+            <div id="game-board"
+                 class="game-board"
+                 aria-label="Atminties kortelių žaidimo lenta">
+            </div>
+          </div>
+
+        </div>
+      </div>
+<div class="game-stats">
+  <h3>Statistika</h3>
+
+  <p>Ėjimai: <span id="movesCount">0</span></p>
+  <p>Bandymų skaičius: <span id="attemptsCount">0</span></p>
+  <p>Sutapusios poros: <span id="matchedCount">0</span></p>
+  <p>Laikas: <span id="timerDisplay">00:00</span></p>
+
+  <hr>
+
+  <p><strong>Geriausi rezultatai (mažiausiai ėjimų):</strong></p>
+  <p>Lengvas (4×3): <span id="bestEasy">–</span></p>
+  <p>Sunkus (6×4): <span id="bestHard">–</span></p>
+
+  <p id="gameMessage" class="game-message"></p>
+</div>
+
+    </section>
+    <!-- /Game Section -->
+
 
   </main>
 
